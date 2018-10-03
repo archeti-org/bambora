@@ -16,6 +16,7 @@ setup(
     license="MIT",
     author="Loïc Faure-Lacroix",
     packages=find_packages(),
+    include_package_data=True,
     install_requires=required,
     long_description=long_description,
     classifiers=[
