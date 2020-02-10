@@ -2,6 +2,7 @@ Bambora Client
 ==============
 
 ![Python application](https://github.com/archeti-org/bambora/workflows/Python%20application/badge.svg)
+[![codecov](https://codecov.io/gh/archeti-org/bambora/branch/master/graph/badge.svg)](https://codecov.io/gh/archeti-org/bambora)
 ![PyPi](https://img.shields.io/badge/python-2.7%203.5-green.svg)
 
 Simple client api that handle working with the REST
