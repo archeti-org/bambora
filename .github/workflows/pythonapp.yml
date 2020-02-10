@@ -27,4 +27,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pytest
+        BAMBORA_MERCHANT_ID=$BAMBORA_MERCHANT_ID pytest
