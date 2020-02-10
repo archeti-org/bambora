@@ -30,10 +30,16 @@ def get_test_card_invalid():
     }
     return card
 
+
+def test_env_variables_present():
+    assert os.environ.get('BAMBORA_MERCHANT_ID') is not None
+    assert os.environ.get('PAYMENT_GATEWAY_PASSCODE') is not None
+    assert os.environ.get('PAYMENT_PROFILE_PASSCODE') is not None
+    assert os.environ.get('PAYMENT_REPORT_PASSCODE') is not None
+
 def test_token_creation(bambora_env):
     token = bambora_env.tokens.create(get_test_card_valid())
 
-    assert os.environ.get('BAMBORA_MERCHANT_ID') is not None
     assert isinstance(token, Token)
     assert isinstance(token._attrs.get('token'), str)
     assert isinstance(token._attrs.get('token'), str)
