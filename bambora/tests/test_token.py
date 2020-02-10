@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 
+import os
 from bambora import Bambora
 from bambora.objects import Token
 from datetime  import datetime, timedelta
@@ -27,12 +28,12 @@ def get_test_card_invalid():
         'expiry_year': year,
         'cvd': "321"
     }
-
     return card
 
 def test_token_creation(bambora_env):
     token = bambora_env.tokens.create(get_test_card_valid())
 
+    assert os.environ.get('BAMBORA_MERCHANT_ID') is not None
     assert isinstance(token, Token)
     assert isinstance(token._attrs.get('token'), str)
     assert isinstance(token._attrs.get('token'), str)
